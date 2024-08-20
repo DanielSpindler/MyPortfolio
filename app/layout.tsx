@@ -68,7 +68,7 @@ export default function RootLayout({
         }`}
     >
     <nav className="h-20 mx-auto animate-fade-in top-0 left-0 right-0">
-      <ul className="flex items-center justify-center gap-4 h-full">
+      <ul className="flex items-center justify-center gap-12 md:gap-24 lg:gap-36 h-full">
         {navigation.map((item) => (
             <Link
                 key={item.href}
