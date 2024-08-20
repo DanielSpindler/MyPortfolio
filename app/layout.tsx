@@ -4,6 +4,7 @@ import LocalFont from "next/font/local";
 import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+import { GoogleTagManager,GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: {
@@ -62,25 +63,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-      <body
-          className={`bg-black relative ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-          }`}
-      >
-      <nav className="h-20 mx-auto animate-fade-in top-0 left-0 right-0">
-        <ul className="flex items-center justify-center gap-4 h-full">
-          {navigation.map((item) => (
-              <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-              >
-                {item.name}
-              </Link>
-          ))}
-        </ul>
-      </nav>
+    <body
+        className={`bg-black relative ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
+        }`}
+    >
+    <nav className="h-20 mx-auto animate-fade-in top-0 left-0 right-0">
+      <ul className="flex items-center justify-center gap-4 h-full">
+        {navigation.map((item) => (
+            <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+            >
+              {item.name}
+            </Link>
+        ))}
+      </ul>
+    </nav>
+    <main>
       {children}
-      </body>
+    </main>
+    <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID!}/>
+    <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER!}/>
+    </body>
     </html>
   );
 }

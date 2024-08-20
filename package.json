@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/mdx": "^13.5.4",
+    "@next/third-parties": "^14.2.5",
     "contentlayer": "^0.3.4",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.284.0",
