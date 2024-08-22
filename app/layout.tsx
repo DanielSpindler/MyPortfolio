@@ -8,7 +8,7 @@ import { GoogleTagManager,GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: {
-    default: "Daniel",
+    default: "Portfolio",
     template: "%s | Portfolio",
   },
   description: "A growing developer",
