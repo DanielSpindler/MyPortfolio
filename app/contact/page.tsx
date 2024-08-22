@@ -1,12 +1,12 @@
 "use client";
-import { Github, Mail, LucideTowerControl } from "lucide-react";
+import {Mail, LucideTowerControl, GitCommitIcon} from "lucide-react";
 import Link from "next/link";
 import { Card } from "../components/card";
 
 const socials = [
 	{
 		icon: <LucideTowerControl size={20} />,
-		href: "discord.com",
+		href: "https://discord.com/users/303555659394449408",
 		label: "Discord",
 		handle: "Click!",
 	},
@@ -17,7 +17,7 @@ const socials = [
 		handle: "admin@daniel-spindler.de",
 	},
 	{
-		icon: <Github size={20} />,
+		icon: <GitCommitIcon size={20} />,
 		href: "https://github.com/DanielSpindler",
 		label: "Github",
 		handle: "Daniel",
@@ -26,7 +26,7 @@ const socials = [
 
 export default () => {
 	return (
-		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
+		<div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
 				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
 					{socials.map((s,index ) => (
